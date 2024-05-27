@@ -2,6 +2,7 @@ name: Process
 
 on:
   workflow_dispatch:
+  push:
 
 jobs:
   process:
