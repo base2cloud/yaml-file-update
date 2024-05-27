@@ -35,8 +35,8 @@ jobs:
           git status --untracked-files=no | grep modified | grep -q file.yml && echo "MODIFIED=YES">> $GITHUB_ENV
 
       - name: Git config
+        if: ${{ env.MODIFIED == 'YES' }}
         run: |
-          git config --user.name=devops-bot
-          git config --user.email=devops@consensys.net
+          git config --global user.name devops-bot
+          git config --global user.email devops@consensys.net
           git commit -m file.yml
-
