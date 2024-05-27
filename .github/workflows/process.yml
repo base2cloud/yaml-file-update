@@ -10,6 +10,10 @@ jobs:
     # container:
     #  image: python:3.12.3-slim-bookworm
 
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,7 +40,4 @@ jobs:
 
       - name: Git config
         if: ${{ env.MODIFIED == 'YES' }}
-        run: |
-          git config --global user.name devops-bot
-          git config --global user.email devops@consensys.net
-          git commit -m file.yml
+        run: ./devops-bot.sh
