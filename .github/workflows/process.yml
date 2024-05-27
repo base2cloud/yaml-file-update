@@ -16,3 +16,12 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+      
+      - name: Process
+        run: python process.py
+        env:
+          GH_APP_ID: ${{ secrets.GH_APP_ID }}
+          GH_APP_KEY_B64: ${{ secrets.GH_APP_KEY_B64 }}
+          GH_ORGANISATION: 'base2cloud'
+          YML_FILE: './file.yml'
+

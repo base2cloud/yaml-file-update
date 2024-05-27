@@ -79,10 +79,10 @@ def main():
   logging.basicConfig(format='%(asctime)s %(levelname)s %(message)s', level=logging.INFO)
 
   # Extract parameters from environment variables
-  gh_token=getenv("GITHUB_TOKEN", None)
-  gh_app_id=getenv("GITHUB_APP_ID", None)
-  gh_app_key_b64=getenv("GITHUB_APP_KEY_B64", None)
-  gh_org=getenv("GITHUB_ORGANISATION", None)
+  gh_token=getenv("GH_TOKEN", None)
+  gh_app_id=getenv("GH_APP_ID", None)
+  gh_app_key_b64=getenv("GH_APP_KEY_B64", None)
+  gh_org=getenv("GH_ORGANISATION", None)
   yml_file=getenv("YML_FILE", None)
 
   # Check GitHub organisation is configured
