@@ -10,3 +10,5 @@ git checkout -b git-bot-$HASH
 git add file.yml
 git commit -m "Changes to file $HASH\n devops bot made changes to file" file.yml
 git push origin $BRANCH_NAME
+
+gh pr --base main -l devops -t "DevOps bot changes $HASH"
