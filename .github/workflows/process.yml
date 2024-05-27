@@ -24,4 +24,7 @@ jobs:
           GH_APP_KEY_B64: ${{ secrets.GH_APP_KEY_B64 }}
           GH_ORGANISATION: 'base2cloud'
           YML_FILE: './file.yml'
+      
+      - name: Check changes
+        run: git status
 
