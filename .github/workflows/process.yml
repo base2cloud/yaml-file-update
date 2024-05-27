@@ -30,5 +30,13 @@ jobs:
           YML_FILE: './file.yml'
       
       - name: Check changes
-        run: git status
+        run: |
+          git diff file.yml
+          git status --untracked-files=no | grep modified | grep -q file.yml && echo "MODIFIED=YES">> $GITHUB_ENV
+
+      - name: Git config
+        run: |
+          git config --user.name=devops-bot
+          git config --user.email=devops@consensys.net
+          git commit -m file.yml
 
