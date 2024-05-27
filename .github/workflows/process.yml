@@ -36,7 +36,7 @@ jobs:
       - name: Check changes
         run: |
           git diff file.yml || echo
-          git status --untracked-files=no | grep modified | grep -q file.yml && echo "MODIFIED=YES">> $GITHUB_ENV
+          git status --untracked-files=no | grep modified | grep -q file.yml && echo "MODIFIED=YES">> $GITHUB_ENV || echo "MODIFIED=NO">> $GITHUB_ENV
 
       - name: Pull request
         if: ${{ env.MODIFIED == 'YES' }}
