@@ -23,10 +23,10 @@ jobs:
           python-version: '3.12.3' 
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r .github/workflows/scripts/requirements.txt
       
       - name: Process
-        run: python process.py
+        run: python .github/workflows/scripts/process.py
         env:
           GH_APP_ID: ${{ secrets.GH_APP_ID }}
           GH_APP_KEY_B64: ${{ secrets.GH_APP_KEY_B64 }}
@@ -40,6 +40,6 @@ jobs:
 
       - name: Pull request
         if: ${{ env.MODIFIED == 'YES' }}
-        run: ./devops-bot.sh
+        run: .github/workflows/scripts/devops-bot.sh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
