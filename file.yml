@@ -4,5 +4,8 @@ users:
     github_handle: cdivitotawela
     state: present
   user02:
-    github_handle: devops-guru
+    github_handle: devsecops-guru
+    state: present
+  user03:
+    github_handle: devsecops-guru
     state: present

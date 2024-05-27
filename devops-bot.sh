@@ -6,7 +6,6 @@ git config --global user.email devops@consensys.net
 HASH=$(md5sum file.yml | sed 's/\(^[^ ]*\).*/\1/g' | cut -c 1-10)
 BRANCH_NAME=git-bot-$HASH
 
-
 # Check PR has alredy created. This is to avoid creating multiple PRs for same change
 PR_COUNT=$(eval "gh pr list --state all --json title  -q '.[] | select(.title | contains(\"$HASH\"))' | wc -l")
 

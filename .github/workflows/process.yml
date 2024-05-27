@@ -38,7 +38,7 @@ jobs:
           git diff file.yml
           git status --untracked-files=no | grep modified | grep -q file.yml && echo "MODIFIED=YES">> $GITHUB_ENV
 
-      - name: Git config
+      - name: Pull request
         if: ${{ env.MODIFIED == 'YES' }}
         run: ./devops-bot.sh
         env:
