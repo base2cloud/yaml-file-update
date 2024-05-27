@@ -7,5 +7,5 @@ users:
     github_handle: devsecops-guru
     state: present
   user03:
-    github_handle: devsecops-guru
+    github_handle: dev-guru
     state: present
