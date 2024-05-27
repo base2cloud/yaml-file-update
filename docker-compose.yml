@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  python:
+    build: .d
+    command: ["python","/app/process.py"]
+    volumes:
+      - $PWD/process.py:/app/process.py
+      - $PWD/file.yml:/app/file.yml
+    environment:
+      - GITHUB_APP_ID=${GITHUB_APP_ID}
+      - GITHUB_APP_KEY_B64=${GITHUB_APP_KEY_B64}
+      - GITHUB_ORGANISATION=${GITHUB_ORGANISATION}
+      - YML_FILE=/app/file.yml
+    

@@ -1,0 +1,8 @@
+---
+users:
+  user01:
+    github_handle: cdivitotawela
+    state: present
+  user02:
+    github_handle: devops-guru
+    state: absent
