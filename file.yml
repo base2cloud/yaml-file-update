@@ -9,3 +9,6 @@ users:
   user03:
     github_handle: dev-guru
     state: absent
+  user04:
+    github_handle: dev-guru
+    state: present
