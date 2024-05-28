@@ -11,4 +11,4 @@ users:
     state: absent
   user04:
     github_handle: dev-guru
-    state: present
+    state: absent
