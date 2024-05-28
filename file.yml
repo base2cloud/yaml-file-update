@@ -8,4 +8,4 @@ users:
     state: present
   user03:
     github_handle: dev-guru
-    state: present
+    state: absent
